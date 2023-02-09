@@ -3,7 +3,8 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.concurrent.*;
 public class ConcurrentHashMapDemo {
-
+	// Normal HashMap kullaninca hata veriyor 
+	// ama bu sekilde ayni anda iki farkli metotta map@i degistirebiliyoruz
 	private static ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<Integer, String>();
 	public static void main(String[] args) {
 		ConcurrentHashMapDemo tChild = new ConcurrentHashMapDemo();
@@ -28,7 +29,7 @@ public class ConcurrentHashMapDemo {
 			Thread.sleep(100);
 		} catch(Exception e) {
 			e.printStackTrace();
-		}
+		} 
 		map.put(5, "Peta");
 	}
 }
